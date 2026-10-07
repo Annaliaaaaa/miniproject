@@ -1,44 +1,74 @@
-// TIP CALCULATOR
+let tipOutput = document.getElementById('tipAmountOutput');
+let totalOutput = document.getElementById('totalBillOutput');
+let checkOutput = document.getElementById('paycheckAmountOutput');
+let gradeOutput = document.getElementById('percentGradeOutput');
+let gasOutput = document.getElementById('gasCostOutput');
 
-let tipAmount;
-let subTotal = 67.72;
-let percentage = 0.2;
-let totalBill;
+let tipBtn = document.getElementById("tipButton");
+tipBtn.addEventListener('click', function () {
+    // TIP CALCULATOR
 
-tipAmount = subTotal + percentage;
-console.log("tipAmount" + tipAmount.toFixed(2))
+    let tipAmount;
+    let subTotal = document.getElementById(subTotalInput).valueAsNumber;
+    let percentage = document.getElementById('percentageInput').valueAsNumber;
+    let totalBill;
 
-totalBill = subTotal + tipAmount;
+    tipAmount = subTotal * percentage;
+    totalBill = subTotal + tipAmount;
 
-console.log("total amount due:" + totalBill.toFixed(2))
+    tipAmount = tipAmount.toFixed(2);
+    totalBill = totalBill.toFixed(2);
 
-//PAY CHECK CALCULATOR
+    tipOutput.innerHTML = "$" + tipAmount;
+    totalOutput.innerHTML = "$" + totalBill;
 
-let hours = 49;
-let hourlyWage = 30.60;
-let payCheck;
+})
 
-payCheck = hours * hourlyWage;
-console.log("payCheck" + payCheck.toFixed(2))
+let paycheckBtn = document.getElementById("paycheckButton");
+paycheckBtn.addEventListener('click', function () {
+    //PAY CHECK CALCULATOR
 
-//GRADE CALCULATOR
+    let hours = document.getElementById('hoursInput').valueAsNumber;
+    let hourlyWage = document.getElementById('hourlywageInput');
+    let payCheck;
 
-let points = 90;
-let pointsMax = 100;
-let englishGrade;
-let percentageGrade = 90;
+    payCheck = hours * hourlyWage;
+    payCheck = payCheck.toFixed(2);
 
-points = pointsMax + percentageGrade
-console.log("points" + points.toFixed(2))
+    checkOutput.innerHtml = "$" + payCheck;
 
-englishGrade = percentageGrade + points
-console.log("englishGrade" + englishGrade.toFixed(2))
+})
 
-//GAS COST CALCULATOR
+let grade = document.getElementById("gradeButton");
+gradeBtn.addEventListener('click', function () {
+    //GRADE CALCULATOR
 
-let gasPrice = 4.90;
-let gallons = 13;
-let gasCost
+    let points = document.getElementById('pointsInput').valueAsNumber;
+    let pointsMax = document.getElementById('pointsMaxInput').valueAsNumber;
+    let englishGrade;
+    let percentageGrade = document.getElementById('percentageGradeInput').valueAsNumber;
 
-gasCost = gasPrice * gallons
-console.log("total cost of gas" + gasCost.toFixed(2))
+    points = pointsMax + percentageGrade
+    englishGrade = percentageGrade + points
+
+    pointsMax = pointsMax.toFixed(2);
+    englishGrade = englishGrade.toFixed(2);
+
+    gradeOutput.innerHtml = englishGrade + "%";
+
+})
+
+let gasBtn = document.getElementById("gasButton");
+gasBtn.addEventListener('click', function () {
+    //GAS COST CALCULATOR
+
+    let gasPrice = document.getElementById('gasPriceInput').valueAsNumber;
+    let gallons = document.getElementById('gallonsInput').valueAsNumber;
+    let gasCost
+
+    gasCost = gasPrice * gallons
+    gasCost = gasCost.toFixed(2);
+
+    gasOutput.innerHTML = "$" + gasCost;
+
+})
