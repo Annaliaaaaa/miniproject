@@ -19,8 +19,8 @@ tipBtn.addEventListener('click', function () {
     tipAmount = tipAmount.toFixed(2);
     totalBill = totalBill.toFixed(2);
 
-    tipOutput.innerHTML = "$" + tipAmount;
-    totalOutput.innerHTML = "$" + totalBill;
+    tipAmountOutput.innerHTML = "$" + tipAmount;
+    totalBillOutput.innerHTML = "$" + totalBill;
 
 })
 
@@ -28,14 +28,14 @@ let paycheckBtn = document.getElementById("paycheckButton");
 paycheckBtn.addEventListener('click', function () {
     //PAY CHECK CALCULATOR
 
-    let hours = document.getElementById('hoursInput').valueAsNumber;
-    let hourlyWage = document.getElementById('hourlywageInput');
+    let hoursWorked = document.getElementById('hoursWorkedInput').valueAsNumber;
+    let hourlyRate = document.getElementById('hourlyRateInput');
     let payCheck;
 
-    payCheck = hours * hourlyWage;
+    payCheck = hoursWorked * hourlyRate;
     payCheck = payCheck.toFixed(2);
 
-    checkOutput.innerHtml = "$" + payCheck;
+    paycheckAmountOutput.innerHtml = "$" + payCheck;
 
 })
 
@@ -43,18 +43,18 @@ let grade = document.getElementById("gradeButton");
 gradeBtn.addEventListener('click', function () {
     //GRADE CALCULATOR
 
-    let points = document.getElementById('pointsInput').valueAsNumber;
-    let pointsMax = document.getElementById('pointsMaxInput').valueAsNumber;
+    let pointsEarned = document.getElementById('pointsEarnedInput').valueAsNumber;
+    let totalPoints = document.getElementById('totalPointsInput').valueAsNumber;
     let englishGrade;
     let percentageGrade = document.getElementById('percentageGradeInput').valueAsNumber;
 
-    points = pointsMax + percentageGrade
+    pointsEarned = totalPoints + percentageGrade
     englishGrade = percentageGrade + points
 
     pointsMax = pointsMax.toFixed(2);
     englishGrade = englishGrade.toFixed(2);
 
-    gradeOutput.innerHtml = englishGrade + "%";
+    percentGradeOutput.innerHtml = englishGrade + "%";
 
 })
 
@@ -63,7 +63,7 @@ gasBtn.addEventListener('click', function () {
     //GAS COST CALCULATOR
 
     let gasPrice = document.getElementById('gasPriceInput').valueAsNumber;
-    let gallons = document.getElementById('gallonsInput').valueAsNumber;
+    let tankGallons = document.getElementById('tankGallonsInput').valueAsNumber;
     let gasCost
 
     gasCost = gasPrice * gallons
@@ -72,3 +72,5 @@ gasBtn.addEventListener('click', function () {
     gasOutput.innerHTML = "$" + gasCost;
 
 })
+
+// FIX THE NAMES
