@@ -121,20 +121,22 @@ userBtn.addEventListener('click', function () {
     // username Variables
     let first = document.getElementById('firstInput').value;
     let fav = document.getElementById('favInput').value;
-    let numm = document.getElementById('nummInput').vaule;
+    let numm = document.getElementById('nummInput');
     let genUser;
 
 
     // gen names
-    genUser = first + fav + numm;
+    genUser = first + fav;
 
+    // number
+    genUser = numm;
 
     // Only show 2 decimal places
     genUser = genUser.toFixed(2);
 
 
     // Show the output
-    userOutput.innerHTML =  genUser ;
+    userOutput.innerHTML = genUser;
 
 
 })
