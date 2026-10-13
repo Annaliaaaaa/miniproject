@@ -3,7 +3,8 @@ let totalOutput = document.getElementById('totalBillOutput');
 let checkOutput = document.getElementById('paycheckAmountOutput');
 let gradeOutput = document.getElementById('percentGradeOutput');
 let gasOutput = document.getElementById('gasCostOutput');
-
+let diceOutput = document.getElementById('diceOutput');
+let userOutput = document.getElementById('userOutput');
 
 let tipBtn = document.getElementById("tipButton");
 tipBtn.addEventListener('click', function () {
@@ -96,6 +97,44 @@ gasBtn.addEventListener('click', function () {
 
     // Show the output
     gasOutput.innerHTML = "$" + gasCost;
+
+
+})
+
+let dieBtn = document.getElementById("diceButton");
+dieBtn.addEventListener('click', function () {
+
+    let numberRolled;
+    let numberGotten;
+    numberRolled = Math.floor(Math.random() * 6 + 1);
+
+    diceOutput.innerHTML = numberRolled
+
+
+
+})
+
+let userBtn = document.getElementById("userOutput");
+userBtn.addEventListener('click', function () {
+
+
+    // username Variables
+    let first = document.getElementById('firstInput').value;
+    let fav = document.getElementById('favInput').value;
+    let numm = document.getElementById('nummInput').vaule;
+    let genUser;
+
+
+    // gen names
+    genUser = first + fav + numm;
+
+
+    // Only show 2 decimal places
+    genUser = genUser.toFixed(2);
+
+
+    // Show the output
+    userOutput.innerHTML =  genUser ;
 
 
 })
