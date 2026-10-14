@@ -114,25 +114,21 @@ dieBtn.addEventListener('click', function () {
 
 })
 
-let userBtn = document.getElementById("userOutput");
+let userBtn = document.getElementById("userButton");
 userBtn.addEventListener('click', function () {
 
 
     // username Variables
     let first = document.getElementById('firstInput').value;
     let fav = document.getElementById('favInput').value;
-    let numm = document.getElementById('nummInput');
+    let numm = Math.floor(Math.random() * 200 + 1);
     let genUser;
 
 
     // gen names
-    genUser = first + fav;
+    genUser = first + fav + numm;
 
-    // number
-    genUser = numm;
-
-    // Only show 2 decimal places
-    genUser = genUser.toFixed(2);
+    
 
 
     // Show the output
